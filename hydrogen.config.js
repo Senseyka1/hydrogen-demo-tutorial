@@ -6,14 +6,16 @@ export default defineConfig({
     defaultLanguageCode: 'EN',
     storeDomain:
       // @ts-ignore
-      Oxygen?.env?.PUBLIC_STORE_DOMAIN || 'a774e7-4.myshopify.com',
+      Oxygen?.env?.PUBLIC_STORE_DOMAIN ||
+      import.meta.env.VITE_PUBLIC_STORE_DOMAIN,
     storefrontToken:
       // @ts-ignore
       Oxygen?.env?.PUBLIC_STOREFRONT_API_TOKEN ||
-      'd083ba9d851e77fece0de9fa90f63ea0',
+      import.meta.env.VITE_PUBLIC_STOREFRONT_API_TOKEN,
     privateStorefrontToken:
       // @ts-ignore
-      Oxygen?.env?.PRIVATE_STOREFRONT_API_TOKEN,
+      Oxygen?.env?.PRIVATE_STOREFRONT_API_TOKEN ||
+      import.meta.env.VITE_PRIVATE_STOREFRONT_API_TOKEN,
     storefrontApiVersion: '2023-04',
     // @ts-ignore
     storefrontId: Oxygen?.env?.PUBLIC_STOREFRONT_ID,
